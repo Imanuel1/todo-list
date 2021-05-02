@@ -1,0 +1,18 @@
+.task-footer {
+    width: 100%;
+    display: flex;
+    /* justify-content: start; */
+    padding: 10px 0;
+}
+
+.task-footer > .h4:not(.h4:first-child){
+    padding-left: 10px;
+}
+
+.task-footer > .to-the-right{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+

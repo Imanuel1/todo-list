@@ -1,0 +1,16 @@
+.c-task{
+    display: flex;
+    padding-top: 15px;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+.c-task > .h4{
+    padding: 0 10px;
+}
+
+.c-task > .is-hidden{
+    margin-left: auto;
+    margin-right: 0;
+}
+
