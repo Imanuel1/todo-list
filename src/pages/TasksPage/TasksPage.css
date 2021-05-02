@@ -1,12 +1,63 @@
-.task-footer {
+.p-tasks-page{
+    height: 100vh;
+}
+
+.p-tasks-page > .h2 {
+    background-image: linear-gradient(to right, rgb(47, 240, 253) , rgb(82, 190, 252));
+    color: honeydew;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.p-tasks-page > .add-task-container> form > .form-group > .form-control{
+    padding: 0.5em 0.75em;
+    height: 100%;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+}
+
+.p-tasks-page > .add-task-container {
     width: 100%;
     display: flex;
-    /* justify-content: start; */
-    padding: 10px 0;
+    justify-content: center;
+}
+
+.p-tasks-page > .add-task-container > form{ 
+    width:50%;
+}
+
+.p-tasks-page > .add-task-container > form > .form-group > .form-control{ 
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tasks-container {
+    background-color: white;
+    padding: 0 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(82, 190, 252, 0.4), 0 6px 20px 0 rgba(82, 190, 252, 0.4); */
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.task-footer {
+    background-image: linear-gradient(to right, rgb(47, 240, 253) , rgb(82, 190, 252));
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    color: lightcyan;
 }
 
 .task-footer > .h4:not(.h4:first-child){
-    padding-left: 10px;
+    padding: 0 10px;
+}
+
+.task-footer > .h4:not(.h4:first-child):hover {
+    color: rgb(82, 190, 252);
+    background-color: lightcyan;
+    border-radius: 10%;
 }
 
 .task-footer > .to-the-right{

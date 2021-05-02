@@ -17,6 +17,18 @@ function TasksPage() {
         }
     }
     
+    function onTaskStatus(e){
+        let index = e.target.getAttribute("index");
+        tasks[index].isComplete = !tasks[index].isComplete;
+        setTasks(tasks.concat([]));
+    }
+
+    function onRemoveTask(e){
+        console.log(e); 
+        let index = e.target.getAttribute("index");
+        console.log(index); 
+        setTasks(tasks.filter( task => task !== tasks[index]));
+    }
 
     return (
         <Container className="p-tasks-page">
@@ -31,8 +43,8 @@ function TasksPage() {
             </div>
             <div className="tasks-container">
                 {
-                    tasks.map(task => {
-                        return <Row><Task text={task.task} isComplete={task.isComplete} isShared={task.isShared} /></Row>
+                    tasks.map((task, index)=> {
+                        return <Row><Task index={index} text={task.task} isComplete={task.isComplete} isShared={task.isShared} onTaskStatus={onTaskStatus} onRemove={onRemoveTask}/></Row>
                     })
                 }
 

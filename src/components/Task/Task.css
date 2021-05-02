@@ -14,3 +14,27 @@
     margin-right: 0;
 }
 
+.c-task > .empty{
+    width: 22px;
+    height: 22px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    cursor: pointer;
+}
+.c-task > .complete{
+    width: 22px;
+    height: 22px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    cursor: pointer;
+}
+.c-task > .line-through{
+    color: grey;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
