@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Container, Form, Row } from 'react-bootstrap';
 import Task from '../../components/Task/Task';
 import taskModel from '../../model/TaskModel';
 import './TasksPage.css'
@@ -9,13 +9,23 @@ function TasksPage() {
     const [tasks, setTasks] =
         useState([new taskModel("email rachel", false, false), new taskModel("throw garbage", true, false)]);
 
+    function handleEnter(e){
+        if(e.key === "Enter" && e.target.value ){
+            setTasks(tasks.concat(new taskModel(addTask,false,false)))
+            setAddTask("")
+            console.log(e.key);
+        }
+    }
+    
+
     return (
         <Container className="p-tasks-page">
             <p className="h2">Website todo</p>
             <div className="add-task-container">
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Add new task" value={addTask} onChange={(e) => setAddTask(e.target.value)}/>
+                <Form onSubmit={e => e.preventDefault()}>
+                    <Form.Group controlId="formBasicText">
+                        <Form.Control type="text" placeholder="Add new task" value={addTask} 
+                            onChange={(e) => setAddTask(e.target.value)} onKeyDown={(e) => handleEnter(e)}/>
                     </Form.Group>
                 </Form>
             </div>
