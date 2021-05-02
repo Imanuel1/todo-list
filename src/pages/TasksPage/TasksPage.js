@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { Container, FormControl, InputGroup } from 'react-bootstrap';
+import { Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import Task from '../../components/Task/Task';
+import taskModel from '../../model/TaskModel';
 import './TasksPage.css'
 
 function TasksPage() {
     const [addTask, setAddTask] = useState(null);
     const [tasks, setTasks] = 
-    useState([{text:"email rachel", isComplete:false},{text:"throw garbage", isComplete:true}]);
+    useState([new taskModel("email rachel", false,false), new taskModel("throw garbage", true,false)]);
 
     return (
         <Container className="p-tasks-page">
             <h4>Website todo</h4>
             <div className="add-task-container">
-                <input className="add-task" placeholder="add new task" value={addTask} onChange={(e) => setAddTask(e.target.value)} ></input>
+                <input className="add-task" placeholder="add new task" value={addTask} onChange={(e) => setAddTask(e.target.value)}></input>
             </div>
             <div className="tasks-container">
-                <Task text="homework" isComplete={false} isShared={false} />
+                {
+                    tasks.map( task => 
+                        {
+                        <Row><Task text={task.text} isComplete={task.isComplete} isShared={false}/></Row>
+                        })
+                }
+                
             </div>
             <div className="task-footer">
                 <p>items left</p>
