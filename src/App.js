@@ -1,14 +1,12 @@
 import './App.css';
 import TasksPage from './pages/TasksPage/TasksPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-
 
 function App() {
   return (
-    <Container className="App">
+    <div className="App">
       <TasksPage/>
-    </Container>
+    </div>
   );
 }
 
