@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, FormControl, InputGroup } from 'react-bootstrap';
 import Task from '../../components/Task/Task';
 import './TasksPage.css'
 
-function TasksPage(props) {
+function TasksPage() {
+    const [addTask, setAddTask] = useState(null);
+    const [tasks, setTasks] = 
+    useState([{text:"email rachel", isComplete:false},{text:"throw garbage", isComplete:true}]);
+
     return (
         <Container className="p-tasks-page">
             <h4>Website todo</h4>
             <div className="add-task-container">
-                <input className="add-task" placeholder="add new task" className="add-task"></input>
+                <input className="add-task" placeholder="add new task" value={addTask} onChange={(e) => setAddTask(e.target.value)} ></input>
             </div>
             <div className="tasks-container">
                 <Task text="homework" isComplete={false} isShared={false} />
