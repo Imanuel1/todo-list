@@ -1,7 +1,7 @@
 .c-task{
     display: flex;
     padding-top: 15px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(196, 196, 196);
     width: 100%;
 }
 
@@ -38,13 +38,6 @@
     text-decoration: line-through;
     font-weight: normal;
 }
-.c-task > .line-through{
-    color: grey;
-    text-decoration: line-through;
-    font-weight: normal;
-}
-
-
 
 .c-task > .is-hidden > .img-container >.share , .c-task > .is-hidden > .img-container >.remove , .c-task > .is-hidden > .img-container >.edit {
     width: 100%;
@@ -73,6 +66,8 @@
     margin: 5px;
     border-radius: 50%;
     padding: 7px;
+    cursor: pointer;
+    background-color: white;
 }
 .c-task > .is-hidden > .img-container:nth-child(2){
     position: absolute;
@@ -86,6 +81,8 @@
     margin: 5px;
     border-radius: 50%;
     padding: 7px;
+    cursor: pointer;
+    background-color: white;
 }
 .c-task > .is-hidden > .img-container:last-child{
     position: absolute;
@@ -99,5 +96,7 @@
     margin: 5px;
     border-radius: 50%;
     padding: 7px;
+    cursor: pointer;
+    background-color: white;
 }
 
