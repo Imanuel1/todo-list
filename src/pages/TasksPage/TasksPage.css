@@ -55,10 +55,16 @@
     display: flex;
     padding: 10px;
     color: lightcyan;
+    /* font-family: Arial; */
 }
 
-.task-footer > .h4:not(.h4:first-child){
+.task-footer > .btn-outline-primary{
     padding: 0 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: none;
+    border: none;
+    color: lightcyan;
 }
 
 .task-footer > .h4:not(.h4:first-child):hover {

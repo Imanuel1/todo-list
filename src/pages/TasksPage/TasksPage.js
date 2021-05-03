@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Row } from 'react-bootstrap';
+import { Button, Container, Form, Row } from 'react-bootstrap';
 import Task from '../../components/Task/Task';
 import taskModel from '../../model/TaskModel';
 import './TasksPage.css'
@@ -8,6 +8,8 @@ function TasksPage() {
     const [addTask, setAddTask] = useState(null);
     const [tasks, setTasks] =
         useState([new taskModel("email rachel", false, false), new taskModel("throw garbage", true, false)]);
+    const [filterType, setFilterType] = useState("All");
+
 
     function handleEnter(e){
         if(e.key === "Enter" && e.target.value ){
@@ -30,6 +32,14 @@ function TasksPage() {
         setTasks(tasks.filter( task => task !== tasks[index]));
     }
 
+    let filterTasks = tasks;
+
+    if(filterType === "Active"){
+        filterTasks = tasks.filter(task => task.isComplete===false );
+    } else if (filterType === "Completed"){
+        filterTasks = tasks.filter(task => task.isComplete===true );
+    }
+
     return (
         <Container className="p-tasks-page">
             <p className="h2">Website todo</p>
@@ -43,7 +53,7 @@ function TasksPage() {
             </div>
             <div className="tasks-container">
                 {
-                    tasks.map((task, index)=> {
+                    filterTasks.map((task, index)=> {
                         return <Row><Task index={index} text={task.task} isComplete={task.isComplete} isShared={task.isShared} onTaskStatus={onTaskStatus} onRemove={onRemoveTask}/></Row>
                     })
                 }
@@ -51,9 +61,9 @@ function TasksPage() {
             </div>
             <div className="task-footer">
                 <p className="h4">{tasks.length} items left</p>
-                <p className="h4 to-the-right">All</p>
-                <p className="h4">Active</p>
-                <p className="h4">Completed</p>
+                <Button variant="outline-primary" className="h4 to-the-right" onClick={(e) => setFilterType(e.target.textContent)}>All</Button>
+                <Button variant="outline-primary" className="h4" onClick={(e) => setFilterType(e.target.textContent)}>Active</Button>
+                <Button variant="outline-primary" className="h4" onClick={(e) => setFilterType(e.target.textContent)}>Completed</Button>
             </div>
         </Container>
     );
