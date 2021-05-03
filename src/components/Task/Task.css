@@ -31,10 +31,73 @@
     background-color:white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
     cursor: pointer;
+    padding: 0;
 }
 .c-task > .line-through{
     color: grey;
     text-decoration: line-through;
     font-weight: normal;
+}
+.c-task > .line-through{
+    color: grey;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+
+
+.c-task > .is-hidden > .img-container >.share , .c-task > .is-hidden > .img-container >.remove , .c-task > .is-hidden > .img-container >.edit {
+    width: 100%;
+    height: 100%;
+}
+
+.c-task:hover > .is-hidden {
+    display: inline-block;
+}
+
+.c-task > .is-hidden {
+    display: none;
+    position: relative;
+}
+
+
+.c-task > .is-hidden > .img-container:first-child{
+    position: absolute;
+    bottom:90%;
+    right:50%;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    margin: 5px;
+    border-radius: 50%;
+    padding: 7px;
+}
+.c-task > .is-hidden > .img-container:nth-child(2){
+    position: absolute;
+    right:30px;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    margin: 5px;
+    border-radius: 50%;
+    padding: 7px;
+}
+.c-task > .is-hidden > .img-container:last-child{
+    position: absolute;
+    top:50%;
+    right:50%;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    margin: 5px;
+    border-radius: 50%;
+    padding: 7px;
 }
 
